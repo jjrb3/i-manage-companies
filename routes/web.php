@@ -16,3 +16,13 @@ Route::get('/', 'HomeController@index')->name('index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Companies
+Route::prefix('companies')->group(function () {
+    Route::get('/list', 'Company\ListController@index')->name('companies.list');
+});
+
+// Employees
+Route::prefix('employees')->group(function () {
+    Route::get('/list', 'Employee\ListController@index')->name('employees.list');
+});

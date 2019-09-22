@@ -71,18 +71,19 @@
                 <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3>
             </div>
             <ul class="nav" id="side-menu">
+
                 <li style="padding: 70px 0 0;">
-                    <a href="dashboard.html" class="waves-effect">
+                    <a href="{{ route('home') }}" class="waves-effect @if($menu === 'home') active @endif">
                         <i class="fa fa-home fa-fw" aria-hidden="true"></i>Home
                     </a>
                 </li>
                 <li>
-                    <a href="profile.html" class="waves-effect">
+                    <a href="{{ route('companies.list') }}" class="waves-effect @if($menu === 'companies') active @endif">
                         <i class="fa  fa-building fa-fw" aria-hidden="true"></i>Companies
                     </a>
                 </li>
                 <li>
-                    <a href="basic-table.html" class="waves-effect">
+                    <a href="{{ route('employees.list') }}" class="waves-effect @if($menu === 'employees') active @endif">
                         <i class="fa fa-users fa-fw" aria-hidden="true"></i>Employees
                     </a>
                 </li>
