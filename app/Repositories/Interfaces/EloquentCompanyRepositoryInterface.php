@@ -29,4 +29,10 @@ interface EloquentCompanyRepositoryInterface
      * @return bool
      */
     public function updateById(int $id, array $companyParameters): bool;
+
+    /**
+     * @param int $id
+     * @return bool
+     */
+    public function destroyById(int $id): bool;
 }

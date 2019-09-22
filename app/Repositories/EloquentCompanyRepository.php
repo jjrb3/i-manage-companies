@@ -41,4 +41,13 @@ class EloquentCompanyRepository extends Company implements EloquentCompanyReposi
             ->where('id', $id)
             ->update($companyParameters);
     }
+
+    /**
+     * @param int $id
+     * @return bool
+     */
+    public function destroyById(int $id): bool
+    {
+        return Company::destroy($id);
+    }
 }
