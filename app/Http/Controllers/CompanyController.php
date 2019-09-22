@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Employee;
+namespace App\Http\Controllers;
 
 
-use App\Http\Controllers\Controller;
-
-class ListController extends Controller
+class CompanyController extends Controller
 {
     /**
      * ListController constructor.
@@ -20,8 +18,8 @@ class ListController extends Controller
      */
     public function index()
     {
-        return view('employee.index', [
-            'menu' => 'employees'
+        return view('company.index', [
+            'menu' => 'companies'
         ]);
     }
 }
