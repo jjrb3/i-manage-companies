@@ -55,6 +55,28 @@ class EloquentEmployeeRepository extends TestCase
             'company_id' => $company->id
         ]);
 
+        $result = $this->repository->findAllPaginate();
+
+        $this->assertEquals($result->count(), 10);
+        $this->assertEquals($result->toArray()['total'], 30);
+        $this->assertEquals($result->toArray()['per_page'], 10);
+        $this->assertEquals($result->toArray()['from'], 1);
+        $this->assertEquals($result->toArray()['last_page'], 3);
+    }
+
+    /**
+     * Fin all employees by company
+     *
+     * @return void
+     */
+    public function testFindAllPaginateByCompany()
+    {
+        $company = factory(Company::class)->create();
+
+        factory(Employee::class, 30)->create([
+            'company_id' => $company->id
+        ]);
+
         $result = $this->repository->findAllPaginateByCompany($company->id);
 
         $this->assertEquals($result->count(), 10);
