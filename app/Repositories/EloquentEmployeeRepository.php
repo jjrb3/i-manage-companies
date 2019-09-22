@@ -16,7 +16,7 @@ class EloquentEmployeeRepository extends Employee implements EloquentEmployeeRep
     /**
      * @return mixed|void
      */
-    public function findAllPaginateByCompany(int $companyId)
+    public function findAllPaginateByCompany(int $companyId): iterable
     {
         return Employee::paginate(10);
     }

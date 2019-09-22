@@ -15,7 +15,7 @@ interface EloquentEmployeeRepositoryInterface
     /**
      * @return mixed
      */
-    public function findAllPaginateByCompany(int $companyId);
+    public function findAllPaginateByCompany(int $companyId): iterable;
 
     /**
      * @param array $EmployeeParameters

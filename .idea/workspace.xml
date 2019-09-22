@@ -6,16 +6,18 @@
       <change afterPath="$PROJECT_DIR$/app/Handlers/Company/GetListHandler.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Handlers/Company/Interfaces/GetListHandlerInterface.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Handlers/Employee/GetListHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentEmployeeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentEmployeeRepositoryInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/EmployeeFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/App/Handlers/Company/CreateHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/App/Handlers/Company/DestroyHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/App/Handlers/Company/GetListHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/App/Handlers/Company/UpdateHandler.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/CompanyControllerTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/EmployeeControllerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentEmployeeRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/HandlerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/HandlerServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentEmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentEmployeeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentEmployeeRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentEmployeeRepositoryInterface.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,24 +73,45 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentEmployeeRepository.php">
+        <entry file="file://$PROJECT_DIR$/app/Handlers/Company/Interfaces/GetListHandlerInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="345">
+              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Handlers/Company/GetListHandler.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
               <folding>
-                <element signature="e#38#62#0#PHP" expanded="true" />
+                <element signature="e#40#100#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+              <folding>
+                <element signature="e#37#71#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentEmployeeRepository.php">
+        <entry file="file://$PROJECT_DIR$/tests/Feature/App/Handlers/Company/GetListHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+            <state relative-caret-position="333">
+              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
               <folding>
-                <element signature="e#47#70#0#PHP" expanded="true" />
+                <element signature="e#54#77#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,20 +179,21 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Exceptions/RepositoryException.php" />
-        <option value="$PROJECT_DIR$/app/Handlers/Company/Interfaces/GetListHandlerInterface.php" />
-        <option value="$PROJECT_DIR$/app/Handlers/Company/GetListHandler.php" />
         <option value="$PROJECT_DIR$/app/Providers/HandlerServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" />
         <option value="$PROJECT_DIR$/database/factories/CompanyFactory.php" />
         <option value="$PROJECT_DIR$/app/Models/Company.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php" />
         <option value="$PROJECT_DIR$/database/factories/EmployeeFactory.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentEmployeeRepositoryInterface.php" />
         <option value="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentEmployeeRepository.php" />
         <option value="$PROJECT_DIR$/app/Models/Employee.php" />
         <option value="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentEmployeeRepository.php" />
+        <option value="$PROJECT_DIR$/app/Handlers/Company/Interfaces/GetListHandlerInterface.php" />
+        <option value="$PROJECT_DIR$/app/Handlers/Company/GetListHandler.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentEmployeeRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/EloquentEmployeeRepository.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/App/Handlers/Company/GetListHandler.php" />
       </list>
     </option>
   </component>
@@ -293,6 +317,23 @@
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="Feature" type="462c0819:PsiDirectoryNode" />
               <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="i-manage-companies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="i-manage-companies" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="Feature" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="Company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="i-manage-companies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="i-manage-companies" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="Feature" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -377,7 +418,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569160757605</updated>
-      <workItem from="1569160758902" duration="18314000" />
+      <workItem from="1569160758902" duration="20557000" />
     </task>
     <task id="LOCAL-00001" summary="[config]: Base files.">
       <created>1569161820113</created>
@@ -491,11 +532,25 @@
       <option name="project" value="LOCAL" />
       <updated>1569178061111</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="[feat]: Employee CRUD.">
+      <created>1569180090006</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1569180090006</updated>
+    </task>
+    <task id="LOCAL-00018" summary="[test]: Unit test repository.">
+      <created>1569180113924</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1569180113924</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18314000" />
+    <option name="totallyTimeSpent" value="20557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -508,7 +563,7 @@
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" weight="0.32891566" />
       <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Terminal" weight="0.4554217" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.33975902" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" weight="0.32891566" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -572,30 +627,11 @@
     <MESSAGE value="[test]: Added create unit test." />
     <MESSAGE value="[feat]: Update company." />
     <MESSAGE value="[feat]: Added destroy company." />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat]: Added destroy company." />
+    <MESSAGE value="[feat]: Employee CRUD." />
+    <MESSAGE value="[test]: Unit test repository." />
+    <option name="LAST_COMMIT_MESSAGE" value="[test]: Unit test repository." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/ample-admin-lite-master/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/ample-admin-lite-master/html/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="82" lean-forward="true" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/themes/ample-admin-lite-master/html/css/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -785,20 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Handlers/Company/Interfaces/GetListHandlerInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Handlers/Company/GetListHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Feature/AppHttpControllersCompanyControllerTest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -854,40 +876,6 @@
     <entry file="file://$PROJECT_DIR$/tests/Feature/App/Http/Controllers/EmployeeControllerTest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="51" selection-end-column="5" />
-          <folding>
-            <element signature="e#37#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="36" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="81" column="19" lean-forward="true" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
-          <folding>
-            <element signature="e#48#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/EloquentEmployeeRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/factories/CompanyFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -902,16 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentEmployeeRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#38#62#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -931,10 +909,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentEmployeeRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        <state relative-caret-position="570">
+          <caret line="38" column="30" lean-forward="true" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
           <folding>
             <element signature="e#47#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="e#48#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/App/Handlers/Company/CreateHandler.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/App/Handlers/Company/DestroyHandler.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+          <folding>
+            <element signature="e#37#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentEmployeeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="70" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/EloquentEmployeeRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Handlers/Company/GetListHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+          <folding>
+            <element signature="e#40#100#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Handlers/Company/Interfaces/GetListHandlerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/App/Handlers/Company/GetListHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+          <folding>
+            <element signature="e#54#77#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

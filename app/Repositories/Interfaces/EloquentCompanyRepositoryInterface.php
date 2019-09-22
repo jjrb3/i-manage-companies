@@ -15,7 +15,7 @@ interface EloquentCompanyRepositoryInterface
     /**
      * @return mixed
      */
-    public function findAllPaginate();
+    public function findAllPaginate(): iterable;
 
     /**
      * @param array $companyParameters
