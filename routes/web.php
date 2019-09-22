@@ -19,10 +19,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Companies
 Route::prefix('companies')->group(function () {
-    Route::get('/list', 'CompanyController@index')->name('companies.list');
+    Route::get('/show', 'CompanyController@index')->name('companies.list');
 });
 
 // Employees
 Route::prefix('employees')->group(function () {
-    Route::get('/list', 'EmployeeController@index')->name('employees.list');
+    Route::get('/show', 'EmployeeController@index')->name('employees.list');
 });

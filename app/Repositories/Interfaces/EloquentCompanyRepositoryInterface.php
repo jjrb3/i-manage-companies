@@ -22,4 +22,11 @@ interface EloquentCompanyRepositoryInterface
      * @return bool
      */
     public function create(array $companyParameters): Company;
+
+    /**
+     * @param int $id
+     * @param array $companyParameters
+     * @return bool
+     */
+    public function updateById(int $id, array $companyParameters): bool;
 }

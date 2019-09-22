@@ -6,18 +6,16 @@
       <change afterPath="$PROJECT_DIR$/app/Handlers/Company/GetListHandler.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Handlers/Company/Interfaces/GetListHandlerInterface.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Handlers/Employee/GetListHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Repositories/EloquentEmployeeRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentEmployeeRepositoryInterface.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/CompanyControllerTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/EmployeeControllerTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentEmployeeRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/HandlerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/HandlerServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php" afterDir="false" />
     </list>
@@ -75,10 +73,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+            <state relative-caret-position="187">
+              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
               <folding>
                 <element signature="e#51#74#0#PHP" expanded="true" />
               </folding>
@@ -89,29 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Company.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="18" selection-end-column="6" />
-              <folding>
-                <element signature="e#23#63#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+            <state relative-caret-position="129">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -119,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+            <state relative-caret-position="207">
+              <caret line="89" column="47" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
               <folding>
                 <element signature="e#48#71#0#PHP" expanded="true" />
               </folding>
@@ -198,10 +184,10 @@
         <option value="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" />
         <option value="$PROJECT_DIR$/database/factories/CompanyFactory.php" />
         <option value="$PROJECT_DIR$/database/factories/EmployeeFactory.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php" />
         <option value="$PROJECT_DIR$/app/Models/Company.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php" />
       </list>
     </option>
   </component>
@@ -409,7 +395,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569160757605</updated>
-      <workItem from="1569160758902" duration="15076000" />
+      <workItem from="1569160758902" duration="15949000" />
     </task>
     <task id="LOCAL-00001" summary="[config]: Base files.">
       <created>1569161820113</created>
@@ -502,15 +488,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569175915973</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[test]: Added create unit test.">
+      <created>1569177022520</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1569177022520</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15076000" />
+    <option name="totallyTimeSpent" value="15949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" sideWeight="0.50120485" side_tool="true" weight="0.24892704" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49879518" visible="true" weight="0.24892704" />
@@ -519,7 +511,7 @@
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" weight="0.32891566" />
       <window_info anchor="bottom" id="Messages" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.50963855" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.49759036" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" weight="0.32891566" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -580,7 +572,8 @@
     <MESSAGE value="[config]: Added models." />
     <MESSAGE value="[feat]: Change controllers and routes." />
     <MESSAGE value="[test]: Added company test." />
-    <option name="LAST_COMMIT_MESSAGE" value="[test]: Added company test." />
+    <MESSAGE value="[test]: Added create unit test." />
+    <option name="LAST_COMMIT_MESSAGE" value="[test]: Added create unit test." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Downloads/gentelella-master/production/index.html">
@@ -890,16 +883,6 @@
     <entry file="file://$PROJECT_DIR$/tests/Feature/App/Http/Controllers/CompanyControllerTest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding>
-            <element signature="e#48#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -910,27 +893,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Company.php">
+    <entry file="file://$PROJECT_DIR$/tests/Unit/App/Repositories/EloquentCompanyRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        <state relative-caret-position="207">
+          <caret line="89" column="47" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
           <folding>
-            <element signature="e#51#74#0#PHP" expanded="true" />
+            <element signature="e#48#71#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/EloquentCompanyRepositoryInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
+        <state relative-caret-position="262">
+          <caret line="30" column="65" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Company.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/EloquentCompanyRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <folding>
+            <element signature="e#51#74#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
