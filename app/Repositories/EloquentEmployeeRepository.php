@@ -14,11 +14,21 @@ use Illuminate\Support\Facades\DB;
 class EloquentEmployeeRepository extends Employee implements EloquentEmployeeRepositoryInterface
 {
     /**
-     * @return mixed|void
+     * @return iterable
+     */
+    public function findAllPaginate(): iterable
+    {
+        return Employee::paginate(10);
+    }
+
+    /**
+     * @param int $companyId
+     * @return iterable
      */
     public function findAllPaginateByCompany(int $companyId): iterable
     {
-        return Employee::paginate(10);
+        return Employee::where('company_id', $companyId)
+            ->paginate(10);
     }
 
     /**

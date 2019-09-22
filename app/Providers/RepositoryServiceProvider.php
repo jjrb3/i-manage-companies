@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Repositories\EloquentCompanyRepository;
+use App\Repositories\EloquentEmployeeRepository;
 use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
+use App\Repositories\Interfaces\EloquentEmployeeRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -12,7 +14,8 @@ class RepositoryServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        EloquentCompanyRepositoryInterface::class => EloquentCompanyRepository::class
+        EloquentCompanyRepositoryInterface::class => EloquentCompanyRepository::class,
+        EloquentEmployeeRepositoryInterface::class => EloquentEmployeeRepository::class
     ];
 
     /**
