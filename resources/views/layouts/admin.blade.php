@@ -74,17 +74,17 @@
 
                 <li style="padding: 70px 0 0;">
                     <a href="{{ route('home') }}" class="waves-effect @if($menu === 'home') active @endif">
-                        <i class="fa fa-home fa-fw" aria-hidden="true"></i>Home
+                        <i class="fa fa-home fa-fw" aria-hidden="true"></i>{{ __('welcome.home') }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('companies.list') }}" class="waves-effect @if($menu === 'companies') active @endif">
-                        <i class="fa  fa-building fa-fw" aria-hidden="true"></i>Companies
+                        <i class="fa  fa-building fa-fw" aria-hidden="true"></i>{{ __('companies.companies') }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('employees.list') }}" class="waves-effect @if($menu === 'employees') active @endif">
-                        <i class="fa fa-users fa-fw" aria-hidden="true"></i>Employees
+                        <i class="fa fa-users fa-fw" aria-hidden="true"></i>{{ __('employees.employees') }}
                     </a>
                 </li>
             </ul>

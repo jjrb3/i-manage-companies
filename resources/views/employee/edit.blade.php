@@ -3,7 +3,7 @@
 @section('content')
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Companies</h4>
+            <h4 class="page-title">{{ __('employees.employee') }}</h4>
         </div>
     </div>
 
@@ -31,7 +31,7 @@
                     @csrf
 
                     <div class="form-group">
-                        <label class="col-md-12">First name (*)</label>
+                        <label class="col-md-12">{{ __('employees.table.first_name') }} (*)</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="Jeremy Reyes" name="first_name"
                                    value="{{ $employee->first_name }}"
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Last name (*)</label>
+                        <label class="col-md-12">{{ __('employees.table.last_name') }} (*)</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="jreyes@example.com" name="last_name"
                                    value="{{ $employee->last_name }}"
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Email (*)</label>
+                        <label class="col-md-12">{{ __('employees.table.email') }} (*)</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="jreyes@example.com" name="email"
                                    value="{{ $employee->email }}"
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Phone</label>
+                        <label class="col-md-12">{{ __('employees.table.phone') }}</label>
                         <div class="col-md-12">
                             <input type="text" class="form-control form-control-line" placeholder="30192839203"
                                    value="{{ $employee->phone }}"
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Company</label>
+                        <label class="col-md-12">{{ __('companies.company') }}</label>
                         <div class="col-md-12">
                             <select class="form-control form-control-line" name="company_id">
 
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">{{ __('employees.table.update') }}</button>
                     </div>
                 </form>
             </div>

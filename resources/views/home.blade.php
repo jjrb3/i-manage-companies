@@ -11,7 +11,7 @@
     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
         <div class="white-box">
             <h3 class="box-title">Welcome to test</h3>
-            You can use the menu bar on the left to get started!
+            {{ __('welcome.message') }}
         </div>
     </div>
 </div>

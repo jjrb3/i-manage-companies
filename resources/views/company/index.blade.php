@@ -3,17 +3,17 @@
 @section('content')
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Companies</h4>
+            <h4 class="page-title">{{ __('companies.companies') }}</h4>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h3 class="box-title">Companies list</h3>
+                <h3 class="box-title">{{ __('companies.company_list') }}</h3>
 
                 <a href="{{ route('companies.add') }}" class="btn btn-primary">
-                    Create new company
+                    {{ __('companies.create_company') }}
                 </a>
                 <hr>
 
@@ -31,11 +31,11 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Logo</th>
-                                <th>Website</th>
-                                <th>Options</th>
+                                <th>{{ __('companies.table.name') }}</th>
+                                <th>{{ __('companies.table.email') }}</th>
+                                <th>{{ __('companies.table.logo') }}</th>
+                                <th>{{ __('companies.table.website') }}</th>
+                                <th>{{ __('companies.table.options') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -55,16 +55,16 @@
                                             <a href="{{ route('companies.edit', ['id' => $company->id]) }}"
                                                class="btn btn-default"
                                             >
-                                                Update
+                                                {{ __('companies.table.edit') }}
                                             </a>
                                             <a href=""
                                                class="btn btn-danger"
                                                onclick="event.preventDefault();
-                                                       confirm('Are you sure you want to delete this information?')
+                                                       confirm('{{ __('welcome.are_your_sure_delete') }}')
                                                        ?document.getElementById('delete-form-{{ $company->id }}').submit()
                                                        :'';"
                                             >
-                                                Delete
+                                                {{ __('companies.table.delete') }}
                                             </a>
                                             <form id="delete-form-{{ $company->id }}"
                                                   action="{{ route('companies.destroy', ['id' => $company->id]) }}"
