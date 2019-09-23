@@ -17,6 +17,14 @@
                 </a>
                 <hr>
 
+                @if (gettype($errors) === 'string')
+                    <div class="alert alert-danger">
+                        <ul>
+                            <li>{{ $errors }}</li>
+                        </ul>
+                    </div>
+                @endif
+
                 @if($companies->count())
 
                     <div class="table-responsive">
@@ -52,11 +60,11 @@
                                             <a href=""
                                                class="btn btn-danger"
                                                onclick="event.preventDefault();
-                                               document.getElementById('delete-form').submit();"
+                                               document.getElementById('delete-form-{{ $company->id }}').submit();"
                                             >
                                                 Eliminar
                                             </a>
-                                            <form id="delete-form"
+                                            <form id="delete-form-{{ $company->id }}"
                                                   action="{{ route('companies.destroy', ['id' => $company->id]) }}"
                                                   method="POST" style="display: none"
                                             >

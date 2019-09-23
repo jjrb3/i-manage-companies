@@ -142,7 +142,7 @@ class CompanyController extends Controller
 
             return response()->redirectTo(route('companies.list'));
         } catch (QueryException $exception) {
-            return back()->withErrors('errors', $exception->getMessage());
+            return back()->with('errors', $exception->getMessage());
         }catch (Exception $exception) {
             return back()->withErrors('errors', $exception->getMessage());
         }

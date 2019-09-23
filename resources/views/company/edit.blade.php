@@ -57,7 +57,7 @@
                         <label class="col-md-12">Website</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="https://github.com/jjrb3" name="website"
-                                   value="{{ $company->wensite }}"
+                                   value="{{ $company->website }}"
                                    class="form-control form-control-line">
                         </div>
                     </div>
