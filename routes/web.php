@@ -31,4 +31,10 @@ Route::prefix('companies')->group(function () {
 // Employees
 Route::prefix('employees')->group(function () {
     Route::get('/show', 'EmployeeController@index')->name('employees.list');
+    Route::get('/add', 'EmployeeController@addIndex')->name('employees.add');
+    Route::get('/{id}/edit', 'EmployeeController@editIndex')->name('employees.edit');
+
+    Route::post('/create', 'EmployeeController@create')->name('employees.create');
+    Route::post('/{id}/update', 'EmployeeController@update')->name('employees.update');
+    Route::post('/{id}/destroy', 'EmployeeController@destroy')->name('employees.destroy');
 });

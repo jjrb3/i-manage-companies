@@ -55,14 +55,14 @@
                                             <a href="{{ route('companies.edit', ['id' => $company->id]) }}"
                                                class="btn btn-default"
                                             >
-                                                Editar
+                                                Update
                                             </a>
                                             <a href=""
                                                class="btn btn-danger"
                                                onclick="event.preventDefault();
                                                document.getElementById('delete-form-{{ $company->id }}').submit();"
                                             >
-                                                Eliminar
+                                                Delete
                                             </a>
                                             <form id="delete-form-{{ $company->id }}"
                                                   action="{{ route('companies.destroy', ['id' => $company->id]) }}"
