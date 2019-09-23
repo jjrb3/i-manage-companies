@@ -4,7 +4,7 @@
 namespace App\Handlers\Employee\Interfaces;
 
 
-use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
+use App\Repositories\Interfaces\EloquentEmployeeRepositoryInterface;
 
 /**
  * Interface DestroyHandlerInterface
@@ -14,9 +14,9 @@ interface DestroyHandlerInterface
 {
     /**
      * DestroyHandlerInterface constructor.
-     * @param EloquentCompanyRepositoryInterface $eloquentCompanyRepository
+     * @param EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository
      */
-    public function __construct(EloquentCompanyRepositoryInterface $eloquentCompanyRepository);
+    public function __construct(EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository);
 
     /**
      * @param int $id

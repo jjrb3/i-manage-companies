@@ -13,6 +13,10 @@ use App\Repositories\Interfaces\EloquentEmployeeRepositoryInterface;
 use Illuminate\Database\QueryException;
 use Mockery\Exception;
 
+/**
+ * Class EmployeeController
+ * @package App\Http\Controllers
+ */
 class EmployeeController extends Controller
 {
     /**

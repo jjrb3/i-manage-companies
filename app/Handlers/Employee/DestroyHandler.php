@@ -5,7 +5,7 @@ namespace App\Handlers\Employee;
 
 
 use App\Handlers\Employee\Interfaces\DestroyHandlerInterface;
-use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
+use App\Repositories\Interfaces\EloquentEmployeeRepositoryInterface;
 
 /**
  * Class DestroyHandler
@@ -14,17 +14,17 @@ use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
 class DestroyHandler implements DestroyHandlerInterface
 {
     /**
-     * @var EloquentCompanyRepositoryInterface
+     * @var EloquentEmployeeRepositoryInterface
      */
-    private $eloquentCompanyRepository;
+    private $eloquentEmployeeRepository;
 
     /**
-     * GetListHandlerInterface constructor.
-     * @param EloquentCompanyRepositoryInterface $eloquentCompanyRepository
+     * DestroyHandler constructor.
+     * @param EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository
      */
-    public function __construct(EloquentCompanyRepositoryInterface $eloquentCompanyRepository)
+    public function __construct(EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository)
     {
-        $this->eloquentCompanyRepository = $eloquentCompanyRepository;
+        $this->eloquentEmployeeRepository = $eloquentEmployeeRepository;
     }
 
     /**
@@ -33,6 +33,6 @@ class DestroyHandler implements DestroyHandlerInterface
      */
     public function handle(int $id)
     {
-        return $this->eloquentCompanyRepository->destroyById($id);
+        return $this->eloquentEmployeeRepository->destroyById($id);
     }
 }
