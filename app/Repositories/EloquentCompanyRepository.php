@@ -14,6 +14,15 @@ use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
 class EloquentCompanyRepository extends Company implements EloquentCompanyRepositoryInterface
 {
     /**
+     * @param int $id
+     * @return Company
+     */
+    public function findById(int $id): Company
+    {
+        return Company::find($id);
+    }
+
+    /**
      * @return mixed|void
      */
     public function findAllPaginate(): iterable

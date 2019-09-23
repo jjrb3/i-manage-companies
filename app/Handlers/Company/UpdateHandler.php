@@ -4,16 +4,16 @@
 namespace App\Handlers\Company;
 
 
-use App\Handlers\Company\Interfaces\CreateHandlerInterface;
+use App\Handlers\Company\Interfaces\UpdateHandlerInterface;
 use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
-use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Http\Request;
 
 /**
- * Class CreateHandler
+ * Class UpdateHandler
  * @package App\Handlers\Company
  */
-class CreateHandler extends UploadFileHandler implements CreateHandlerInterface
+class UpdateHandler extends UploadFileHandler implements UpdateHandlerInterface
 {
     /**
      * @var EloquentCompanyRepositoryInterface
@@ -49,7 +49,7 @@ class CreateHandler extends UploadFileHandler implements CreateHandlerInterface
      * @return \App\Models\Company|bool|mixed
      * @throws Exception
      */
-    public function handle()
+    public function handle(int $id): bool
     {
         $companyParameters = $this->request->all();
 
@@ -59,22 +59,17 @@ class CreateHandler extends UploadFileHandler implements CreateHandlerInterface
 
         unset($companyParameters['_token']);
 
-        return $this->save($companyParameters);
+        return $this->update($id, $companyParameters);
     }
 
     /**
+     * @param int $id
      * @param array $companyParameters
-     * @return \App\Models\Company|bool
+     * @return bool
      * @throws Exception
      */
-    private function save(array $companyParameters)
+    private function update(int $id, array $companyParameters): bool
     {
-        $company = $this->eloquentCompanyRepository->create($companyParameters);
-
-        if (!isset($company->id)) {
-            throw new Exception('Error');
-        }
-
-        return $company;
+        return $this->eloquentCompanyRepository->updateById($id, $companyParameters);
     }
 }

@@ -13,6 +13,12 @@ use App\Models\Company;
 interface EloquentCompanyRepositoryInterface
 {
     /**
+     * @param int $id
+     * @return Company
+     */
+    public function findById(int $id): Company;
+
+    /**
      * @return mixed
      */
     public function findAllPaginate(): iterable;

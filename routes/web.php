@@ -24,6 +24,7 @@ Route::prefix('companies')->group(function () {
     Route::get('/{id}/edit', 'CompanyController@editIndex')->name('companies.edit');
 
     Route::post('/create', 'CompanyController@create')->name('companies.create');
+    Route::post('/{id}/update', 'CompanyController@update')->name('companies.update');
     Route::post('/{id}/destroy', 'CompanyController@destroy')->name('companies.destroy');
 });
 

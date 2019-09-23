@@ -23,11 +23,20 @@ class CompanyRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required|' . (!empty($this->id)?: 'unique:companies|') .'max:60',
-            'email' => 'required|email:rfc,dns|max:100',
-            'logo' => 'dimensions:max_width=1000,max_height=1000',
-            'website' => 'required'
-        ];
+        $validate = ['name' => 'required|' . (!empty($this->id) ? '' : 'unique:companies|') .'max:60'];
+
+        if (!empty($this->logo)) {
+            array_merge($validate, ['logo' => 'dimensions:max_width=1000,max_height=1000']);
+        }
+
+        if (!empty($this->email)) {
+            $validate['email'] = 'required|email:rfc,dns|max:100';
+        }
+
+        if (!empty($this->website)) {
+            $validate['website'] = 'required';
+        }
+
+        return $validate;
     }
 }

@@ -4,7 +4,6 @@
 namespace App\Handlers\Company;
 
 
-use App\Handlers\Company\Interfaces\UploadFileHandlerInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -13,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
  * Class ImageUploadHandler
  * @package App\Handlers\Company
  */
-class UploadFileHandler implements UploadFileHandlerInterface
+class UploadFileHandler
 {
     /**
      * @var Request

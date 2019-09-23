@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Handlers\Company\Interfaces\CreateHandlerInterface;
 use App\Handlers\Company\Interfaces\GetListHandlerInterface;
+use App\Handlers\Company\Interfaces\UpdateHandlerInterface;
 use App\Http\Requests\CompanyRequest;
+use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
 use Mockery\Exception;
 
 /**
@@ -20,9 +22,19 @@ class CompanyController extends Controller
     private $getListHandler;
 
     /**
-     * @var
+     * @var CreateHandlerInterface
      */
     private $createHandler;
+
+    /**
+     * @var UpdateHandlerInterface
+     */
+    private $updateHandler;
+
+    /**
+     * @var EloquentCompanyRepositoryInterface
+     */
+    private $eloquentCompanyRepository;
 
     /**
      * CompanyController constructor.
@@ -31,11 +43,15 @@ class CompanyController extends Controller
      */
     public function __construct(
         GetListHandlerInterface $getListHandler,
-        CreateHandlerInterface $createHandler
+        CreateHandlerInterface $createHandler,
+        UpdateHandlerInterface $updateHandler,
+        EloquentCompanyRepositoryInterface $eloquentCompanyRepository
     ) {
         $this->middleware('auth');
         $this->getListHandler = $getListHandler;
         $this->createHandler  = $createHandler;
+        $this->updateHandler  = $updateHandler;
+        $this->eloquentCompanyRepository = $eloquentCompanyRepository;
     }
 
     /**
@@ -60,6 +76,18 @@ class CompanyController extends Controller
     }
 
     /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editIndex($id)
+    {
+        return view('company.edit', [
+            'menu' => 'companies',
+            'company' => $this->eloquentCompanyRepository->findById($id)
+        ]);
+    }
+
+    /**
      * @param CompanyRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -69,6 +97,23 @@ class CompanyController extends Controller
 
         try {
             $this->createHandler->handle();
+
+            return response()->redirectTo(route('companies.list'));
+        } catch (Exception $exception) {
+            return back()->with('errors', [$exception->getMessage()]);
+        }
+    }
+
+    /**
+     * @param CompanyRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(CompanyRequest $request, $id)
+    {
+        $this->updateHandler->setRequest($request);
+
+        try {
+            $this->updateHandler->handle($id);
 
             return response()->redirectTo(route('companies.list'));
         } catch (Exception $exception) {

@@ -6,6 +6,8 @@ use App\Handlers\Company\CreateHandler as CreateCompanyHandler;
 use App\Handlers\Company\GetListHandler as GetCompanyListHandler;
 use App\Handlers\Company\Interfaces\CreateHandlerInterface as CreateCompanyHandlerInterface;
 use App\Handlers\Company\Interfaces\GetListHandlerInterface as GetCompanyListHandlerInterface;
+use App\Handlers\Company\Interfaces\UpdateHandlerInterface as UpdateCompanyHandlerInterface;
+use App\Handlers\Company\UpdateHandler as UpdateCompanyHandler;
 use App\Handlers\Employee\GetListHandler as GetListEmployeeHandler;
 use App\Handlers\Employee\Interfaces\GetListHandlerInterface as GetListEmployeeHandlerInterface;
 use Illuminate\Support\ServiceProvider;
@@ -19,6 +21,7 @@ class HandlerServiceProvider extends ServiceProvider
         // Company
         GetCompanyListHandlerInterface::class => GetCompanyListHandler::class,
         CreateCompanyHandlerInterface::class => CreateCompanyHandler::class,
+        UpdateCompanyHandlerInterface::class => UpdateCompanyHandler::class,
 
         // Employee
         GetListEmployeeHandlerInterface::class => GetListEmployeeHandler::class
