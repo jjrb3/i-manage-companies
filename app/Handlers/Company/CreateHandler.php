@@ -7,21 +7,14 @@ namespace App\Handlers\Company;
 use App\Handlers\Company\Interfaces\CreateHandlerInterface;
 use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
 use Exception;
 
 /**
  * Class CreateHandler
  * @package App\Handlers\Company
  */
-class CreateHandler implements CreateHandlerInterface
+class CreateHandler extends UploadFileHandler implements CreateHandlerInterface
 {
-    /**
-     * @var Request
-     */
-    private $request;
-
     /**
      * @var EloquentCompanyRepositoryInterface
      */
@@ -65,24 +58,6 @@ class CreateHandler implements CreateHandlerInterface
         }
 
         return $this->save($companyParameters);
-    }
-
-    /**
-     * @return string|null
-     */
-    private function uploadImage(): ?string
-    {
-        if ($cover = $this->request->file('logo')) {
-
-            $extension  = $cover->getClientOriginalExtension();
-            $fileName   = $cover->getFilename() . '.' . $extension;
-
-            Storage::disk('public')->put($fileName, File::get($cover));
-
-            return $fileName;
-        }
-
-        return null;
     }
 
     /**
