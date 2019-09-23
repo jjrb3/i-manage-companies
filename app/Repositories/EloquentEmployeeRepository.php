@@ -18,7 +18,8 @@ class EloquentEmployeeRepository extends Employee implements EloquentEmployeeRep
      */
     public function findAllPaginate(): iterable
     {
-        return Employee::paginate(10);
+        return Employee::orderBy('id','desc')
+            ->paginate(10);
     }
 
     /**
@@ -28,6 +29,7 @@ class EloquentEmployeeRepository extends Employee implements EloquentEmployeeRep
     public function findAllPaginateByCompany(int $companyId): iterable
     {
         return Employee::where('company_id', $companyId)
+            ->orderBy('id','desc')
             ->paginate(10);
     }
 

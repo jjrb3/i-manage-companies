@@ -18,7 +18,8 @@ class EloquentCompanyRepository extends Company implements EloquentCompanyReposi
      */
     public function findAllPaginate(): iterable
     {
-        return Company::paginate(10);
+        return Company::orderBy('id','desc')
+            ->paginate(10);
     }
 
     /**

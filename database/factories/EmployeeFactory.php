@@ -10,7 +10,7 @@ $factory->define(Employee::class, function (Faker $faker) {
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
         'email' => $faker->safeEmail,
-        'phone' => $faker->numberBetween(0,10),
+        'phone' => $faker->numberBetween(0, 100000),
         'created_at' => now(),
         'updated_at' => now()
     ];

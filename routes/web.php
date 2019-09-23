@@ -20,6 +20,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Companies
 Route::prefix('companies')->group(function () {
     Route::get('/show', 'CompanyController@index')->name('companies.list');
+    Route::get('/add', 'CompanyController@addIndex')->name('companies.add');
+    Route::get('/{id}/edit', 'CompanyController@editIndex')->name('companies.edit');
+
+    Route::post('/create', 'CompanyController@create')->name('companies.create');
+    Route::post('/{id}/destroy', 'CompanyController@destroy')->name('companies.destroy');
 });
 
 // Employees

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\CompanyMutatorsTrait;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -10,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Company extends Model
 {
+    use CompanyMutatorsTrait;
+
     /**
      * @var string
      */
@@ -22,5 +25,8 @@ class Company extends Model
      */
     protected $fillable = [
         'name',
+        'email',
+        'logo',
+        'website'
     ];
 }
