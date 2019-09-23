@@ -3,7 +3,7 @@
 
 namespace App\Handlers\Employee\Interfaces;
 
-use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
+use App\Repositories\Interfaces\EloquentEmployeeRepositoryInterface;
 use Illuminate\Http\Request;
 
 /**
@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 interface UpdateHandlerInterface
 {
     /**
-     * GetListHandlerInterface constructor.
-     * @param EloquentCompanyRepositoryInterface $eloquentCompanyRepository
+     * UpdateHandlerInterface constructor.
+     * @param EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository
      */
-    public function __construct(EloquentCompanyRepositoryInterface $eloquentCompanyRepository);
+    public function __construct(EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository);
 
     /**
      * @return Request

@@ -23,7 +23,7 @@
 
                 <form class="form-horizontal form-material"
                       id="delete-form" ç
-                      action="{{ route('companies.update',['id' => $company->id]) }}"
+                      action="{{ route('employees.update',['id' => $employee->id]) }}"
                       method="POST"
                       enctype="multipart/form-data"
                 >
@@ -31,34 +31,53 @@
                     @csrf
 
                     <div class="form-group">
-                        <label class="col-md-12">Name (*)</label>
+                        <label class="col-md-12">First name (*)</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="Jeremy Reyes" name="name"
-                                   class="form-control form-control-line"
-                                   value="{{ $company->name }}"
-                                   required>
+                            <input type="text" placeholder="Jeremy Reyes" name="first_name"
+                                   value="{{ $employee->first_name }}"
+                                   class="form-control form-control-line" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Email</label>
+                        <label class="col-md-12">Last name (*)</label>
+                        <div class="col-md-12">
+                            <input type="text" placeholder="jreyes@example.com" name="last_name"
+                                   value="{{ $employee->last_name }}"
+                                   class="form-control form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Email (*)</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="jreyes@example.com" name="email"
-                                   value="{{ $company->email }}"
+                                   value="{{ $employee->email }}"
                                    class="form-control form-control-line">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Logo</label>
+                        <label class="col-md-12">Phone</label>
                         <div class="col-md-12">
-                            <input type="file" class="form-control form-control-line" name="logo">
+                            <input type="text" class="form-control form-control-line" placeholder="30192839203"
+                                   value="{{ $employee->phone }}"
+                                   name="phone">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Website</label>
+                        <label class="col-md-12">Company</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="https://github.com/jjrb3" name="website"
-                                   value="{{ $company->website }}"
-                                   class="form-control form-control-line">
+                            <select class="form-control form-control-line" name="company_id">
+
+                                @foreach($companies as $company)
+
+                                    <option value="{{ $company->id }}"
+                                        @if($employee->company_id == $company->id) selected @endif
+                                    >
+                                        {{ $company->name }}
+                                    </option>
+
+                                @endforeach
+
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">

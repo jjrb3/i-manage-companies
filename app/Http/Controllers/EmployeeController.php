@@ -31,7 +31,7 @@ class EmployeeController extends Controller
     private $updateHandler;
 
     /**
-     * @var
+     * @var DestroyHandlerInterface
      */
     private $destroyHandler;
 
@@ -97,7 +97,8 @@ class EmployeeController extends Controller
     {
         return view('employee.edit', [
             'menu' => 'employees',
-            'company' => $this->eloquentEmployeeRepository->findById($id)
+            'employee' => $this->eloquentEmployeeRepository->findById($id),
+            'companies' => $this->eloquentCompanyRepository->findAll()
         ]);
     }
 

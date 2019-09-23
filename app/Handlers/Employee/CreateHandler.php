@@ -22,7 +22,7 @@ class CreateHandler implements CreateHandlerInterface
     private $eloquentEmployeeRepository;
 
     /**
-     * @var
+     * @var Request
      */
     private $request;
 

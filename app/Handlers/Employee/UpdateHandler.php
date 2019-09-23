@@ -5,7 +5,7 @@ namespace App\Handlers\Employee;
 
 
 use App\Handlers\Employee\Interfaces\UpdateHandlerInterface;
-use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
+use App\Repositories\Interfaces\EloquentEmployeeRepositoryInterface;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -16,17 +16,22 @@ use Illuminate\Http\Request;
 class UpdateHandler implements UpdateHandlerInterface
 {
     /**
-     * @var EloquentCompanyRepositoryInterface
+     * @var EloquentEmployeeRepositoryInterface
      */
-    private $eloquentCompanyRepository;
+    private $eloquentEmployeeRepository;
 
     /**
-     * GetListHandler constructor.
-     * @param EloquentCompanyRepositoryInterface $eloquentCompanyRepository
+     * @var Request
      */
-    public function __construct(EloquentCompanyRepositoryInterface $eloquentCompanyRepository)
+    private $request;
+
+    /**
+     * UpdateHandler constructor.
+     * @param EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository
+     */
+    public function __construct(EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository)
     {
-        $this->eloquentCompanyRepository = $eloquentCompanyRepository;
+        $this->eloquentEmployeeRepository = $eloquentEmployeeRepository;
     }
 
     /**
@@ -51,15 +56,11 @@ class UpdateHandler implements UpdateHandlerInterface
      */
     public function handle(int $id): bool
     {
-        $companyParameters = $this->request->all();
+        $employeeParameters = $this->request->all();
 
-        if ($fileName = $this->uploadImage()) {
-            $companyParameters['logo'] = $fileName;
-        }
+        unset($employeeParameters['_token']);
 
-        unset($companyParameters['_token']);
-
-        return $this->update($id, $companyParameters);
+        return $this->update($id, $employeeParameters);
     }
 
     /**
@@ -70,6 +71,6 @@ class UpdateHandler implements UpdateHandlerInterface
      */
     private function update(int $id, array $companyParameters): bool
     {
-        return $this->eloquentCompanyRepository->updateById($id, $companyParameters);
+        return $this->eloquentEmployeeRepository->updateById($id, $companyParameters);
     }
 }
