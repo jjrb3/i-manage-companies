@@ -19,6 +19,11 @@ interface EloquentCompanyRepositoryInterface
     public function findById(int $id): Company;
 
     /**
+     * @return iterable
+     */
+    public function findAll(): iterable;
+
+    /**
      * @return mixed
      */
     public function findAllPaginate(): iterable;

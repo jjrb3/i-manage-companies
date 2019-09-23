@@ -12,7 +12,7 @@
             <div class="white-box">
                 <h3 class="box-title">Employees list</h3>
 
-                <a href="{{ route('companies.add') }}" class="btn btn-primary">
+                <a href="{{ route('employees.add') }}" class="btn btn-primary">
                     Create new employee
                 </a>
                 <hr>

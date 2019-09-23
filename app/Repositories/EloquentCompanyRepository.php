@@ -3,12 +3,9 @@
 
 namespace App\Repositories;
 
-use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
 use App\Models\Company;
 use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
-use Illuminate\Support\Facades\Log;
-use Exception;
 
 /**
  * Class EloquentCompanyRepository
@@ -23,6 +20,14 @@ class EloquentCompanyRepository extends Company implements EloquentCompanyReposi
     public function findById(int $id): Company
     {
         return Company::find($id);
+    }
+
+    /**
+     * @return iterable
+     */
+    public function findAll(): iterable
+    {
+        return Company::all();
     }
 
     /**

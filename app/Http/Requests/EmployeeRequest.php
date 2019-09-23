@@ -24,7 +24,7 @@ class EmployeeRequest extends FormRequest
     public function rules()
     {
         $validate = [
-            'email' => 'required|' . (!empty($this->id) ? '' : 'unique:employees|') .'max:100',
+            'email' => 'required|email:rfc,dns|' . (!empty($this->id) ? '' : 'unique:employees|') .'max:100',
             'first_name' => 'required|max:100',
             'last_name' => 'required|max:100',
             'company_id' => 'required',

@@ -23,7 +23,7 @@
 
                 <form class="form-horizontal form-material"
                       id="delete-form" ç
-                      action="{{ route('companies.create') }}"
+                      action="{{ route('employees.create') }}"
                       method="POST"
                       enctype="multipart/form-data"
                 >
@@ -31,30 +31,45 @@
                     @csrf
 
                     <div class="form-group">
-                        <label class="col-md-12">Name (*)</label>
+                        <label class="col-md-12">First name (*)</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="Jeremy Reyes" name="name"
+                            <input type="text" placeholder="Jeremy Reyes" name="first_name"
                                    class="form-control form-control-line" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Email</label>
+                        <label class="col-md-12">Last name (*)</label>
+                        <div class="col-md-12">
+                            <input type="text" placeholder="jreyes@example.com" name="last_name"
+                                   class="form-control form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Email (*)</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="jreyes@example.com" name="email"
                                    class="form-control form-control-line">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Logo</label>
+                        <label class="col-md-12">Phone</label>
                         <div class="col-md-12">
-                            <input type="file" class="form-control form-control-line" name="logo">
+                            <input type="text" class="form-control form-control-line" placeholder="30192839203"
+                                   name="phone">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-12">Website</label>
+                        <label class="col-md-12">Company</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="https://github.com/jjrb3" name="website"
-                                   class="form-control form-control-line">
+                            <select class="form-control form-control-line" name="company_id">
+
+                                @foreach($companies as $company)
+
+                                    <option value="{{ $company->id }}">{{ $company->name }}</option>
+
+                                @endforeach
+
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">

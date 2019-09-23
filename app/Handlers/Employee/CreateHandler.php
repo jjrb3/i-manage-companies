@@ -6,6 +6,7 @@ namespace App\Handlers\Employee;
 
 use App\Handlers\Employee\Interfaces\CreateHandlerInterface;
 use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
+use App\Repositories\Interfaces\EloquentEmployeeRepositoryInterface;
 use Illuminate\Http\Request;
 use Exception;
 
@@ -18,15 +19,20 @@ class CreateHandler implements CreateHandlerInterface
     /**
      * @var EloquentCompanyRepositoryInterface
      */
-    private $eloquentCompanyRepository;
+    private $eloquentEmployeeRepository;
+
+    /**
+     * @var
+     */
+    private $request;
 
     /**
      * GetListHandler constructor.
      * @param EloquentCompanyRepositoryInterface $eloquentCompanyRepository
      */
-    public function __construct(EloquentCompanyRepositoryInterface $eloquentCompanyRepository)
+    public function __construct(EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository)
     {
-        $this->eloquentCompanyRepository = $eloquentCompanyRepository;
+        $this->eloquentEmployeeRepository = $eloquentEmployeeRepository;
     }
 
     /**
@@ -51,30 +57,26 @@ class CreateHandler implements CreateHandlerInterface
      */
     public function handle()
     {
-        $companyParameters = $this->request->all();
+        $employeeParameters = $this->request->all();
 
-        if ($fileName = $this->uploadImage()) {
-            $companyParameters['logo'] = $fileName;
-        }
+        unset($employeeParameters['_token']);
 
-        unset($companyParameters['_token']);
-
-        return $this->save($companyParameters);
+        return $this->save($employeeParameters);
     }
 
     /**
-     * @param array $companyParameters
-     * @return \App\Models\Company|bool
+     * @param array $employeeParameters
+     * @return \App\Models\Company|\App\Models\Employee|bool
      * @throws Exception
      */
-    private function save(array $companyParameters)
+    private function save(array $employeeParameters)
     {
-        $company = $this->eloquentCompanyRepository->create($companyParameters);
+        $employee = $this->eloquentEmployeeRepository->create($employeeParameters);
 
-        if (!isset($company->id)) {
+        if (!isset($employee->id)) {
             throw new Exception('Error');
         }
 
-        return $company;
+        return $employee;
     }
 }

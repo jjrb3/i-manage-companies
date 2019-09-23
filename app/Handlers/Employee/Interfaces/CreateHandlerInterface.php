@@ -5,6 +5,7 @@ namespace App\Handlers\Employee\Interfaces;
 
 
 use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
+use App\Repositories\Interfaces\EloquentEmployeeRepositoryInterface;
 use Illuminate\Http\Request;
 
 /**
@@ -14,10 +15,10 @@ use Illuminate\Http\Request;
 interface CreateHandlerInterface
 {
     /**
-     * GetListHandlerInterface constructor.
-     * @param EloquentCompanyRepositoryInterface $eloquentCompanyRepository
+     * CreateHandlerInterface constructor.
+     * @param EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository
      */
-    public function __construct(EloquentCompanyRepositoryInterface $eloquentCompanyRepository);
+    public function __construct(EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository);
 
     /**
      * @return Request

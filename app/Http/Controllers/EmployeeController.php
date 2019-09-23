@@ -8,6 +8,7 @@ use App\Handlers\Employee\Interfaces\DestroyHandlerInterface;
 use App\Handlers\Employee\Interfaces\GetListHandlerInterface;
 use App\Handlers\Employee\Interfaces\UpdateHandlerInterface;
 use App\Http\Requests\EmployeeRequest;
+use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
 use App\Repositories\Interfaces\EloquentEmployeeRepositoryInterface;
 use Illuminate\Database\QueryException;
 use Mockery\Exception;
@@ -40,6 +41,11 @@ class EmployeeController extends Controller
     private $eloquentEmployeeRepository;
 
     /**
+     * @var EloquentCompanyRepositoryInterface
+     */
+    private $eloquentCompanyRepository;
+
+    /**
      * CompanyController constructor.
      * @param GetListHandlerInterface $getListHandler
      * @param CreateHandlerInterface $createHandler
@@ -49,14 +55,16 @@ class EmployeeController extends Controller
         CreateHandlerInterface $createHandler,
         UpdateHandlerInterface $updateHandler,
         DestroyHandlerInterface $destroyHandler,
-        EloquentEmployeeRepositoryInterface $eloquentEmployeeRepositoryç
+        EloquentEmployeeRepositoryInterface $eloquentEmployeeRepository,
+        EloquentCompanyRepositoryInterface $eloquentCompanyRepository
     ) {
         $this->middleware('auth');
         $this->getListHandler = $getListHandler;
         $this->createHandler  = $createHandler;
         $this->updateHandler  = $updateHandler;
         $this->destroyHandler = $destroyHandler;
-        $this->eloquentEmployeeRepository = $eloquentEmployeeRepositoryç;
+        $this->eloquentEmployeeRepository = $eloquentEmployeeRepository;
+        $this->eloquentCompanyRepository = $eloquentCompanyRepository;
     }
 
     /**
@@ -65,7 +73,7 @@ class EmployeeController extends Controller
     public function index()
     {
         return view('employee.index', [
-            'menu' => 'companies',
+            'menu' => 'employees',
             'employees' => $this->getListHandler->handle()
         ]);
     }
@@ -76,7 +84,8 @@ class EmployeeController extends Controller
     public function addIndex()
     {
         return view('employee.create', [
-            'menu' => 'companies'
+            'menu' => 'employees',
+            'companies' => $this->eloquentCompanyRepository->findAll()
         ]);
     }
 
@@ -87,40 +96,41 @@ class EmployeeController extends Controller
     public function editIndex($id)
     {
         return view('employee.edit', [
-            'menu' => 'companies',
+            'menu' => 'employees',
             'company' => $this->eloquentEmployeeRepository->findById($id)
         ]);
     }
 
     /**
-     * @param CompanyRequest $request
+     * @param EmployeeRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function create(CompanyRequest $request)
+    public function create(EmployeeRequest $request)
     {
         $this->createHandler->setRequest($request);
 
         try {
             $this->createHandler->handle();
 
-            return response()->redirectTo(route('employee.list'));
+            return response()->redirectTo(route('employees.list'));
         } catch (Exception $exception) {
             return back()->withErrors('errors', [$exception->getMessage()]);
         }
     }
 
     /**
-     * @param CompanyRequest $request
+     * @param EmployeeRequest $request
+     * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(CompanyRequest $request, $id)
+    public function update(EmployeeRequest $request, $id)
     {
         $this->updateHandler->setRequest($request);
 
         try {
             $this->updateHandler->handle($id);
 
-            return response()->redirectTo(route('employee.list'));
+            return response()->redirectTo(route('employees.list'));
         } catch (Exception $exception) {
             return back()->withErrors('errors', [$exception->getMessage()]);
         }
@@ -135,7 +145,7 @@ class EmployeeController extends Controller
         try {
             $this->destroyHandler->handle($id);
 
-            return response()->redirectTo(route('employee.list'));
+            return response()->redirectTo(route('employees.list'));
         } catch (QueryException $exception) {
             return back()->with('errors', $exception->getMessage());
         }catch (Exception $exception) {
