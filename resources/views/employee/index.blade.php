@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h3 class="box-title">Companies list</h3>
+                <h3 class="box-title">Employees list</h3>
 
                 <a href="{{ route('companies.add') }}" class="btn btn-primary">
                     Create new employee
@@ -25,7 +25,7 @@
                     </div>
                 @endif
 
-                @if($companies->count())
+                @if($employees->count())
 
                     <div class="table-responsive">
                         <table class="table">
@@ -41,19 +41,16 @@
                             </thead>
                             <tbody>
 
-                                @foreach($companies as $company)
+                                @foreach($employees as $employee)
 
                                     <tr>
-                                        <td>{{ $company->name }}</td>
-                                        <td>{{ $company->email }}</td>
+                                        <td>{{ $employee->first_name }}</td>
+                                        <td>{{ $employee->last_name }}</td>
+                                        <td>{{ $employee->email }}</td>
+                                        <td>{{ $employee->phone }}</td>
+                                        <td>{{ $employee->comany_name }}</td>
                                         <td>
-                                            <img src="{{ asset($company->logo) }}" width="100" height="100">
-                                        </td>
-                                        <td width="30%">
-                                            <a href="{{ $company->website }}">{{ $company->website }}</a>
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('companies.edit', ['id' => $company->id]) }}"
+                                            <a href="{{ route('employees.edit', ['id' => $employee->id]) }}"
                                                class="btn btn-default"
                                             >
                                                 Update
@@ -61,12 +58,12 @@
                                             <a href=""
                                                class="btn btn-danger"
                                                onclick="event.preventDefault();
-                                               document.getElementById('delete-form-{{ $company->id }}').submit();"
+                                               document.getElementById('delete-form-{{ $employee->id }}').submit();"
                                             >
                                                 Delete
                                             </a>
-                                            <form id="delete-form-{{ $company->id }}"
-                                                  action="{{ route('companies.destroy', ['id' => $company->id]) }}"
+                                            <form id="delete-form-{{ $employee->id }}"
+                                                  action="{{ route('employees.destroy', ['id' => $employee->id]) }}"
                                                   method="POST" style="display: none"
                                             >
                                                 @csrf
@@ -80,7 +77,7 @@
                         </table>
                     </div>
 
-                    {{ $companies->links() }}
+                    {{ $employees->links() }}
 
                 @endif
             </div>

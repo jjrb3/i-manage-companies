@@ -35,9 +35,9 @@ class EmployeeController extends Controller
     private $destroyHandler;
 
     /**
-     * @var EloquentCompanyRepositoryInterface
+     * @var EloquentEmployeeRepositoryInterface
      */
-    private $eloquentCompanyRepository;
+    private $eloquentEmployeeRepository;
 
     /**
      * CompanyController constructor.
@@ -49,14 +49,14 @@ class EmployeeController extends Controller
         CreateHandlerInterface $createHandler,
         UpdateHandlerInterface $updateHandler,
         DestroyHandlerInterface $destroyHandler,
-        EloquentCompanyRepositoryInterface $eloquentCompanyRepository
+        EloquentEmployeeRepositoryInterface $eloquentEmployeeRepositoryç
     ) {
         $this->middleware('auth');
         $this->getListHandler = $getListHandler;
         $this->createHandler  = $createHandler;
         $this->updateHandler  = $updateHandler;
         $this->destroyHandler = $destroyHandler;
-        $this->eloquentCompanyRepository = $eloquentCompanyRepository;
+        $this->eloquentEmployeeRepository = $eloquentEmployeeRepositoryç;
     }
 
     /**
@@ -64,9 +64,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view('company.index', [
+        return view('employee.index', [
             'menu' => 'companies',
-            'companies' => $this->getListHandler->handle()
+            'employees' => $this->getListHandler->handle()
         ]);
     }
 
@@ -75,7 +75,7 @@ class EmployeeController extends Controller
      */
     public function addIndex()
     {
-        return view('company.create', [
+        return view('employee.create', [
             'menu' => 'companies'
         ]);
     }
@@ -86,9 +86,9 @@ class EmployeeController extends Controller
      */
     public function editIndex($id)
     {
-        return view('company.edit', [
+        return view('employee.edit', [
             'menu' => 'companies',
-            'company' => $this->eloquentCompanyRepository->findById($id)
+            'company' => $this->eloquentEmployeeRepository->findById($id)
         ]);
     }
 
@@ -103,7 +103,7 @@ class EmployeeController extends Controller
         try {
             $this->createHandler->handle();
 
-            return response()->redirectTo(route('companies.list'));
+            return response()->redirectTo(route('employee.list'));
         } catch (Exception $exception) {
             return back()->withErrors('errors', [$exception->getMessage()]);
         }
@@ -120,7 +120,7 @@ class EmployeeController extends Controller
         try {
             $this->updateHandler->handle($id);
 
-            return response()->redirectTo(route('companies.list'));
+            return response()->redirectTo(route('employee.list'));
         } catch (Exception $exception) {
             return back()->withErrors('errors', [$exception->getMessage()]);
         }
@@ -135,7 +135,7 @@ class EmployeeController extends Controller
         try {
             $this->destroyHandler->handle($id);
 
-            return response()->redirectTo(route('companies.list'));
+            return response()->redirectTo(route('employee.list'));
         } catch (QueryException $exception) {
             return back()->with('errors', $exception->getMessage());
         }catch (Exception $exception) {
