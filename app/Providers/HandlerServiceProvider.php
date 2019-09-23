@@ -10,8 +10,14 @@ use App\Handlers\Company\Interfaces\DestroyHandlerInterface as DestroyCompanyHan
 use App\Handlers\Company\Interfaces\GetListHandlerInterface as GetCompanyListHandlerInterface;
 use App\Handlers\Company\Interfaces\UpdateHandlerInterface as UpdateCompanyHandlerInterface;
 use App\Handlers\Company\UpdateHandler as UpdateCompanyHandler;
+use App\Handlers\Employee\CreateHandler;
+use App\Handlers\Employee\DestroyHandler;
 use App\Handlers\Employee\GetListHandler as GetListEmployeeHandler;
+use App\Handlers\Employee\Interfaces\CreateHandlerInterface;
+use App\Handlers\Employee\Interfaces\DestroyHandlerInterface;
 use App\Handlers\Employee\Interfaces\GetListHandlerInterface as GetListEmployeeHandlerInterface;
+use App\Handlers\Employee\Interfaces\UpdateHandlerInterface;
+use App\Handlers\Employee\UpdateHandler;
 use Illuminate\Support\ServiceProvider;
 
 class HandlerServiceProvider extends ServiceProvider
@@ -27,7 +33,10 @@ class HandlerServiceProvider extends ServiceProvider
         DestroyCompanyHandlerInterface::class => DestroyCompanyHandler::class,
 
         // Employee
-        GetListEmployeeHandlerInterface::class => GetListEmployeeHandler::class
+        GetListEmployeeHandlerInterface::class => GetListEmployeeHandler::class,
+        CreateHandlerInterface::class => CreateHandler::class,
+        UpdateHandlerInterface::class => UpdateHandler::class,
+        DestroyHandlerInterface::class => DestroyHandler::class
     ];
 
     /**

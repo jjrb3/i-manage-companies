@@ -13,6 +13,12 @@ use App\Models\Employee;
 interface EloquentEmployeeRepositoryInterface
 {
     /**
+     * @param int $id
+     * @return Employee
+     */
+    public function findById(int $id): Employee;
+
+    /**
      * @return iterable
      */
     public function findAllPaginate(): iterable;

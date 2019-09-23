@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\DB;
 class EloquentEmployeeRepository extends Employee implements EloquentEmployeeRepositoryInterface
 {
     /**
+     * @param int $id
+     * @return Employee
+     */
+    public function findById(int $id): Employee
+    {
+        return Employee::find($id);
+    }
+
+    /**
      * @return iterable
      */
     public function findAllPaginate(): iterable
