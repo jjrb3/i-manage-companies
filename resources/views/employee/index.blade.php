@@ -58,7 +58,9 @@
                                             <a href=""
                                                class="btn btn-danger"
                                                onclick="event.preventDefault();
-                                               document.getElementById('delete-form-{{ $employee->id }}').submit();"
+                                               confirm('Are you sure you want to delete this information?')
+                                                       ?document.getElementById('delete-form-{{ $employee->id }}').submit()
+                                                       :'';"
                                             >
                                                 Delete
                                             </a>
