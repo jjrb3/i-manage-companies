@@ -16,6 +16,7 @@
                     Create new company
                 </a>
                 <hr>
+
                 @if($companies->count())
 
                     <div class="table-responsive">

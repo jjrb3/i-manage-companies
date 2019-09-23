@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 
 use App\Handlers\Company\Interfaces\CreateHandlerInterface;
+use App\Handlers\Company\Interfaces\DestroyHandlerInterface;
 use App\Handlers\Company\Interfaces\GetListHandlerInterface;
 use App\Handlers\Company\Interfaces\UpdateHandlerInterface;
 use App\Http\Requests\CompanyRequest;
 use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Log;
 use Mockery\Exception;
 
 /**
@@ -32,6 +35,11 @@ class CompanyController extends Controller
     private $updateHandler;
 
     /**
+     * @var
+     */
+    private $destroyHandler;
+
+    /**
      * @var EloquentCompanyRepositoryInterface
      */
     private $eloquentCompanyRepository;
@@ -45,12 +53,14 @@ class CompanyController extends Controller
         GetListHandlerInterface $getListHandler,
         CreateHandlerInterface $createHandler,
         UpdateHandlerInterface $updateHandler,
+        DestroyHandlerInterface $destroyHandler,
         EloquentCompanyRepositoryInterface $eloquentCompanyRepository
     ) {
         $this->middleware('auth');
         $this->getListHandler = $getListHandler;
         $this->createHandler  = $createHandler;
         $this->updateHandler  = $updateHandler;
+        $this->destroyHandler = $destroyHandler;
         $this->eloquentCompanyRepository = $eloquentCompanyRepository;
     }
 
@@ -100,7 +110,7 @@ class CompanyController extends Controller
 
             return response()->redirectTo(route('companies.list'));
         } catch (Exception $exception) {
-            return back()->with('errors', [$exception->getMessage()]);
+            return back()->withErrors('errors', [$exception->getMessage()]);
         }
     }
 
@@ -117,7 +127,24 @@ class CompanyController extends Controller
 
             return response()->redirectTo(route('companies.list'));
         } catch (Exception $exception) {
-            return back()->with('errors', [$exception->getMessage()]);
+            return back()->withErrors('errors', [$exception->getMessage()]);
+        }
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        try {
+            $this->destroyHandler->handle($id);
+
+            return response()->redirectTo(route('companies.list'));
+        } catch (QueryException $exception) {
+            return back()->withErrors('errors', $exception->getMessage());
+        }catch (Exception $exception) {
+            return back()->withErrors('errors', $exception->getMessage());
         }
     }
 }

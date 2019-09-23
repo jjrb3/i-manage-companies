@@ -11,7 +11,7 @@
         <div class="col-sm-12">
             <div class="white-box">
 
-                @if ($errors->any())
+                @if (session::g$errors)
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)

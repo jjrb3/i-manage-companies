@@ -3,9 +3,12 @@
 
 namespace App\Repositories;
 
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
 use App\Models\Company;
 use App\Repositories\Interfaces\EloquentCompanyRepositoryInterface;
+use Illuminate\Support\Facades\Log;
+use Exception;
 
 /**
  * Class EloquentCompanyRepository
