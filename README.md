@@ -46,3 +46,4 @@ MySQL was used for this project.
 * Singlenton pattern.
 * Clean code.
 * PSR2. 
+* Unit & Integration test
